@@ -10,7 +10,6 @@ function TodoList() {
       return;
     }
     const newTodos = [todo, ...todos];
-
     setTodos(newTodos);
   };
 
@@ -25,7 +24,6 @@ function TodoList() {
 
   const removeTodo = (id) => {
     const removeArr = [...todos].filter((todo) => todo.id !== id);
-
     setTodos(removeArr);
   };
 
@@ -36,19 +34,21 @@ function TodoList() {
       }
       return todo;
     });
+
     setTodos(updatedTodos);
   };
 
   return (
     <div>
-      <h2 className="todo-h2">Add a task</h2>
       <TodoForm onSubmit={addTodo} />
-      <Todo
-        todos={todos}
-        completeTodo={completeTodo}
-        removeTodo={removeTodo}
-        updateTodo={updateTodo}
-      />
+      <div className="todo-wrapper">
+        <Todo
+          todos={todos}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          updateTodo={updateTodo}
+        />
+      </div>
     </div>
   );
 }

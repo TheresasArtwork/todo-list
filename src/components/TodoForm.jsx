@@ -42,15 +42,13 @@ function TodoForm(props) {
         <>
           <input
             type="text"
-            placeholder="take the bin out"
+            placeholder="enter a new todo and press enter"
             value={input}
             name="text"
             className="todo-input"
             onChange={handleChange}
             ref={inputRef}
           ></input>
-
-          <button className="todo-button">Add task</button>
         </>
       )}
     </form>
